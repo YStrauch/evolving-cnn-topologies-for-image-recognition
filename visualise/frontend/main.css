@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+}
+
+.filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: lightgrey;
+  padding: 20px 50px 0;
+}
+.filter__select {
+  width: 100%;
+}
+
+.ga-viz {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5rem;
+  bottom: 0;
+}
+.ga-viz__diagram {
+  margin-right: 22rem;
+}
+.ga-viz__stats {
+  text-align: right;
+  line-height: 2;
+}
+.ga-viz__svg {
+  width: 100%;
+  height: 100%;
+}
+.ga-viz .tick text {
+  font-size: 1.5em;
+}
+.ga-viz__bg {
+  fill: #EBEBEB;
+  x: 0;
+  y: 0;
+}
+.ga-viz .connection {
+  fill: none;
+  stroke-width: .1875rem;
+  opacity: .5;
+}
+.ga-viz .cl {
+  stroke: black;
+  stroke-width: 1;
+}
+.ga-viz .p1 {
+  stroke: blue;
+  color: blue;
+}
+.ga-viz .p2 {
+  stroke: red;
+  color: red;
+}
+.ga-viz .point {
+  opacity: .5;
+  stroke: black;
+}
+.ga-viz .point--ghost {
+  fill: transparent;
+  stroke-dasharray: 3;
+}
+.ga-viz .highlight--fit {
+  fill: none;
+  stroke-width: 7;
+  stroke: #c7c747;
+  z-index: 2;
+}
+.ga-viz .highlight--acc {
+  z-index: 2;
+  fill: none;
+  stroke-width: 7;
+  stroke: #c74747;
+}
+.ga-viz__tooltip {
+  visibility: hidden;
+  position: absolute;
+  top: 0px;
+  bottom: 50px;
+  right: 0;
+  width: 20rem;
+  background-color: white;
+  border: solid 5px;
+  border-radius: 5px;
+  padding: 5px;
+  color: #000;
+  overflow: auto;
+}
+.ga-viz__tooltip hr {
+  width: 100%;
+  border-top: 1px dashed grey;
+}
+@media (max-width: 1200px) {
+  .ga-viz {
+    pointer-events: none;
+  }
+  .ga-viz__diagram {
+    margin-right: 0;
+  }
+  .ga-viz__tooltip {
+    margin: 0 auto 3rem;
+    position: relative;
+    height: auto;
+  }
+}
+@media (max-width: 700px) {
+  .ga-viz__tooltip {
+    width: 100%;
+  }
+}
+
+@media print {
+  .ga-viz {
+    top: 0;
+  }
+  .ga-viz__diagram {
+    margin-right: 0;
+  }
+  .ga-viz text,
+  .ga-viz .tick text {
+    font-size: 25px;
+  }
+
+  .ga-viz__bg {
+    fill: none;
+  }
+
+  .ga-viz .point {
+    fill: #5c5c5c !important;
+  }
+
+  .tick line {
+    stroke: black;
+  }
+
+  .filter {
+    display: none;
+  }
+
+  .ga-viz__tooltip {
+    display: none;
+  }
+}

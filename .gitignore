@@ -1,0 +1,9 @@
+**/__pycache__
+**/.ipynb_checkpoints
+**/.history
+.DS_STORE
+.vscode
+
+cga_src/download
+experiments
+._git*

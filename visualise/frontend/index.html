@@ -1,0 +1,77 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>GA Visualisation</title>
+
+  <link rel="stylesheet" href="lib/normalize.css">
+  <link rel="stylesheet" href="main.css">
+
+  <script src="available_data.js"></script>
+  <script src="lib/d3.v4.js"></script>
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/jquery.loadTemplate.min.js"></script>
+  <script src="lib/js-yaml.min.js"></script>
+  <script src="lib/diff.min.js"></script>
+
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <main class="ga-viz">
+    <div class="ga-viz__diagram">
+      <svg class="ga-viz__svg">
+          <g class="ga-viz__offset">
+            <defs><clipPath id="clip"><rect x="0" y="0"></rect></clipPath></defs>
+            <rect class="ga-viz__bg"></rect>
+            <g class="ga-viz__axis--x"></g>
+            <g class="ga-viz__axis--y"></g>
+            <text class="ga-viz__axis-label--x" text-anchor="end">Generation</text>
+            <text class="ga-viz__axis-label--y" text-anchor="end" transform="rotate(-90)">Fitness</text>
+            <g class="ga-viz__dynamic" clip-path="url(#clip)"></g>
+          </g>
+      </svg>
+    </div>
+    <aside class="ga-viz__tooltip"></aside>
+  </main>
+
+  <aside class="filter">
+    <select id="sel_dataset" class="filter__select"></select>
+    <div class="ga-viz__stats" id='stats'></div>
+  </aside>
+
+  <aside id="tooltip" class="tooltip"></aside>
+
+  <script type="text/html" id="tooltip-template">
+    <div>
+        <div class="tooltip__species" data-content="species"></div>
+        Operator: <span data-content="reason"></span><br/>
+        Number of training epochs: <span data-content="num_epoch"></span><br/>
+        Fitness: <span data-content="fitness"></span><span data-content="evaluation.fitness"></span><br/>
+        Accuracy: <span data-content="accuracy"></span><span data-content="evaluation.accuracy"></span><br/>
+        Size: <span data-content="evaluation.size"></span><br/>
+        Duration: <span data-content="evaluation.duration"></span><br/>
+        Number of params: <span data-content="num_params"></span><br/>
+        Generation: <span data-content="x"></span><br/><br/>
+
+        Parent 1 (<span data-color="parent1.color" data-content="parent1.species"></span>):
+        <p class="p1" data-content="parent1" data-format="GenomeFormatter"></p>
+
+        Parent 2 (<span data-content="parent2.species"></span>):
+        <p class="p2" data-content="parent2" data-format="GenomeFormatter"></p>
+
+        Result (<span data-content="species"></span>):
+        <p data-content="this" data-format="GenomeDiffFormatter"></p>
+    </div>
+  </script>
+
+  <script type="text/html" id="stats-template">
+    <div>
+      Total evaluation time: <span data-content="evaluation_time"></span> hours<br/>
+    </div>
+  </script>
+</body>
+
+</html>
