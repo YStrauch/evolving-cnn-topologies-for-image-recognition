@@ -1,6 +1,6 @@
 # Evolving Convolutional Neural Network Topologies for Image Recognition
 
-Code base to my [MSc Thesis Artificial Intelligence](https://ga.yaron-strauch.de), University of Southampton.
+Code base to my [MSc Thesis Artificial Intelligence](https://ga.yaron-strauch.com), University of Southampton.
 
 ![Example visualisation of a genetic algorithm evolving CNNs](exp1.png "Logo Title Text 1")
 
