@@ -24,10 +24,15 @@ This is an _academic_ project, i.e. hardly a tool that you can use for productio
 ## Technical Setup
 ### Install
 
+We strongly advise installing [CUDA](https://developer.nvidia.com/cuda-downloads) first. The program will fall back to CPU if no CUDA compatible devices are found, however this will take significantly longer.
+
 ```bash
+# using conda:
 conda env create environment.yml
-# or
+# or using pip without conda:
 pip install -r requirements.txt
+# or, if automatic installation doesn't work:
+conda create -n cnn python=3 pandas==1.1.3 numpy==1.19.2 pylint==2.6.0 matplotlib==3.3.2 PyYAML==5.3.1 pytorch==1.7.0 torchvision==0.8.1 -c pytorch
 ```
 
 ### Run tests
