@@ -1,6 +1,6 @@
 # Evolving Convolutional Neural Network Topologies for Image Recognition
 
-Code base to my [MSc Thesis Artificial Intelligence](https://ga.yaron-strauch.com), University of Southampton.
+Code base to my [MSc Thesis Artificial Intelligence](https://ga.yaron-strauch.com), University of Southampton, and a related publication to AAAI-21 [Two Novel Performance Improvements for Evolving CNN Topologies](https://arxiv.org/abs/2102.05451).
 
 ![Example visualisation of a genetic algorithm evolving CNNs](exp1.png "Logo Title Text 1")
 
@@ -47,9 +47,15 @@ python ga.cifar.approach3.py
 ```
 
 ### Run the ancestry visualisation
+Note: The script will try to such a HTTPS certificate via the `openssl` command. If this fails you need to create a visualise/server.pem yourself
+The self-signed certificate must be accepted manually in the browser.
+
 ```bash
 cd visualise
+# (optional) parse all pickles into yaml files, you will need to adjust this script!
 python visualise.py
+# run visualisation
+python server.py
 ```
 
 Or, head to https://ga.yaron-strauch.com
@@ -99,3 +105,6 @@ The yaml files (for the interactive visualisation) are named more concisely in t
 4. data-MNIST__popsize-20__crossover-0.9__mutation-0.2__punishment-per-hour-0__learning-0.1_0.9_[1, 3, 5]_0.9__epochfn-const_epochs_6
 5. data-CIFAR10__popsize-20__crossover-0.9__mutation-0.2__punishment-per-hour-0.05__learning-0.1_0.9_[1, 26, 43]_0.9__epochfn-const_epochs_60
 data-CIFAR10__popsize-20__crossover-0.9__mutation-0.2__punishment-per-hour-0__learning-0.1_0.9_[1, 30, 50]_0.9__epochfn-linear_epochs_30_70
+
+### Not included in thesis, included in [Two Novel Performance Improvements for Evolving CNN Topologies](https://arxiv.org/abs/2102.05451).
+6. data-CIFAR10__popsize-20__crossover-0.9__mutation-0.2__punishment-per-hour-0.05__learning-0.1_0.9_[1, 30, 50]_0.9__epochfn-linear_epochs_30_70

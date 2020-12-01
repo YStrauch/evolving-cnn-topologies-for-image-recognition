@@ -558,6 +558,13 @@ exp6 = (
     'exp6'
 )
 
+# new experiment, not part of thesis
+# regularisation and linear epochs
+exp7 = (
+    'data-CIFAR10__popsize-20__crossover-0.9__mutation-0.2__punishment-per-hour-0.05__learning-0.1_0.9_[1, 30, 50]_0.9__epochfn-linear_epochs_30_70',
+    'exp7'
+)
+
 exps = [
     exp1,
     exp2,
@@ -565,6 +572,7 @@ exps = [
     exp3,
     exp5,
     exp6,
+    exp7,
 ]
 
 base_generations = load_generations(exp1[0])
@@ -572,5 +580,5 @@ base_generations = load_generations(exp1[0])
 for exp in exps:
     plot(*exp, base_generations if exp != exp1 else None)
 
-plot_time_diff(exp5[0], [exp1], 'visualise/%stimediff.pdf' % exp5[1])
-plot_time_diff(exp6[0], [exp1], 'visualise/%stimediff.pdf' % exp6[1])
+for exp in [exp5, exp6, exp7]:
+    plot_time_diff(exp[0], [exp1], 'visualise/%stimediff.pdf' % exp[1])

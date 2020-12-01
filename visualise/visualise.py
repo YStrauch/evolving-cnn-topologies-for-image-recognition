@@ -55,6 +55,10 @@ experiments = [
      'data-CIFAR10__popsize-20__crossover-0.9__mutation-0.2__punishment-per-hour-0__learning-0.1_0.9_[1, 30, 50]_0.9__epochfn-linear_epochs_30_70'
      ),
 
+     (cifar10,
+     'data-CIFAR10__popsize-20__crossover-0.9__mutation-0.2__punishment-per-hour-0.05__learning-0.1_0.9_[1, 30, 50]_0.9__epochfn-linear_epochs_30_70'
+     ),
+
     # (cifar10,
     #  'data-CIFAR10__popsize-20__crossover-0.9__mutation-0.2__punishment-per-hour-0.1__learning-0.1_0.9_[1, 30, 50]_0.9__epochfn-linear_epochs_30_70'
     #  ),
